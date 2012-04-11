@@ -1,0 +1,9 @@
+{
+  "name": "mowglibot",
+  "version": "1.0.0",
+  "dependencies": {
+    "hubot": "",
+    "hubot-scripts": "",
+    "hubot-irc": ""
+  }
+}
