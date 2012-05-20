@@ -16,7 +16,7 @@ randomName = ->
 
 module.exports = (robot) ->
   robot.respond /name (my |a |the )?project/i, (msg) ->
-    msg.send randomName()
+    msg.send "What about '#{randomName()}'?"
 
   robot.hear /should I rename/i, (msg) ->
     msg.send "Yes. What don't you call it '#{randomName()}'?"
