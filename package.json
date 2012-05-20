@@ -3,9 +3,8 @@
   "version": "1.0.0",
 
   "dependencies": {
-    "hubot": "git://github.com/github/hubot.git#v2.2.0",
+    "hubot": "2.2.0",
     "hubot-scripts": ">=2.0.4",
-    "hubot-irc": "0.0.7",
     "optparse": "1.0.3",
     "gist": "0.2.x"
   },
