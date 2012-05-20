@@ -4,6 +4,8 @@ words = [
   [ "Foundation", "Studio", "University", "Space", "Camp", "Initiative", "Labs", "Library", "Festival", "Conference", "Meetup", "Project", "Group", "Philosophy", "Cluster", "Hub", "Standard" ]
 ]
 
+qs = [ "Have you thought about", "What about", "What do you think of", "Why don't you call it" ]
+
 randomName = ->
   name = []
   i = 0
@@ -16,12 +18,12 @@ randomName = ->
 
 module.exports = (robot) ->
   robot.respond /name (my |a |the )?project/i, (msg) ->
-    msg.send "What about '#{randomName()}'?"
+    msg.send msg.random(qs) + " '#{randomName()}'?"
 
   robot.hear /should I rename/i, (msg) ->
-    msg.send "Yes. What don't you call it '#{randomName()}'?"
+    msg.send "Yes. " + msg.random(qs) + " '#{randomName()}'?"
 
-  robot.hear /how (can|do|would) I/i, (msg) ->
+  robot.hear /how (can|do|would|should) I/i, (msg) ->
     msg.send "Have you tried using theDataHub?"
 
   robot.hear /data/i, (msg) ->
