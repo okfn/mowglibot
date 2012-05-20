@@ -1,7 +1,7 @@
 words = [
   [ "Open", "Free", "Libre", "Universal", "Future" ]
-  [ "Content", "Knowledge", "Web", "P2P", "Freedom", "Liberty", "Learning", "Resource", "Salad", "Wiki", "Art", "Squirrel", "Everything", "Hardware", "Media", "Music", "Science", "Standard" ]
-  [ "Foundation", "Studio", "University", "Space", "Camp", "Initiative", "Labs", "Library", "Festival", "Conference", "Meetup", "Project", "Group", "Philosophy" ]
+  [ "Content", "Knowledge", "Web", "P2P", "Freedom", "Liberty", "Learning", "Resource", "Salad", "Wiki", "Art", "Squirrel", "Everything", "Hardware", "Media", "Music", "Science", "Standard", "Okapi", "Axolotl" ]
+  [ "Foundation", "Studio", "University", "Space", "Camp", "Initiative", "Labs", "Library", "Festival", "Conference", "Meetup", "Project", "Group", "Philosophy", "Cluster", "Hub", "Standard" ]
 ]
 
 randomName = ->
