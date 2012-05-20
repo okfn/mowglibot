@@ -5,8 +5,6 @@
 # help - Displays all of the help commands that Hubot knows about.
 # help <query> - Displays all help commands that match <query>.
 
-gist = require 'gist'
-
 module.exports = (robot) ->
   robot.respond /help\s*(.*)?$/i, (msg) ->
     cmds = robot.helpCommands()
@@ -16,8 +14,4 @@ module.exports = (robot) ->
     unless robot.name is 'Hubot'
       emit = emit.replace(/(H|h)ubot/g, robot.name)
 
-    if emit.split("\n").length < 4
-      msg.send emit
-    else
-      gist.create emit, (url) ->
-        msg.send "I do quite a lot of stuff. See the full list at #{url}"
+    msg.send emit
