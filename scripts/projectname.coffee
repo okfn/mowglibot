@@ -28,3 +28,6 @@ module.exports = (robot) ->
 
   robot.hear /data/i, (msg) ->
     msg.send "Is it on datahub.io?"
+
+  robot.hear /data ?suite/i, (msg) ->
+    msg.send "/play noooo"
