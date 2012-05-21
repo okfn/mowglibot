@@ -26,5 +26,5 @@ module.exports = (robot) ->
   robot.hear /how (can|do|would|should) I/i, (msg) ->
     msg.send "Have you tried using theDataHub?"
 
-  robot.hear /data/i, (msg) ->
+  robot.hear /\bdata(set)?\b/i, (msg) ->
     msg.send "Is it on datahub.io?"
