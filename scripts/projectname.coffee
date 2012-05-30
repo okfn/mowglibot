@@ -27,4 +27,5 @@ module.exports = (robot) ->
     msg.send "Have you tried using theDataHub?"
 
   robot.hear /\bdata(set)?\b/i, (msg) ->
-    msg.send "Is it on datahub.io?"
+    if Math.random() < 0.2
+      msg.send "...hmmph. Okay, I get it. It's not on datahub.io..."
