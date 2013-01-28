@@ -3,7 +3,7 @@
   "version": "1.0.0",
 
   "dependencies": {
-    "hubot": "2.2.0",
+    "hubot": "2.4.0",
     "hubot-scripts": ">=2.0.4",
     "optparse": "1.0.3",
     "gist": "0.2.x"
