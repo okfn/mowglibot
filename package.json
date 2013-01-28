@@ -4,7 +4,7 @@
 
   "dependencies": {
     "hubot": "2.2.0",
-    "hubot-scripts": ">=2.0.4",
+    "hubot-scripts": "2.0.4",
     "optparse": "1.0.3",
     "gist": "0.2.x"
   },
