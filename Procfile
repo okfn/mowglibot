@@ -1,1 +1,1 @@
-web: bin/hubot -a campfire -n Mowgli
+web: app: bin/hubot -a irc -n mowglibot
