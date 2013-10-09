@@ -72,8 +72,10 @@ getDefaultTimezones = (msg) ->
 
 module.exports = (robot) ->
   robot.hear /!(tz|times?|timezones)$/i, (msg) ->
-    getDefaultTimezones().then (res) -> msg.send(res.join(', '))
+    getDefaultTimezones()
+    .done (res) -> msg.send(res.join(', '))
 
   robot.hear /^!(tz|time|timezone)\s+(.+)$/i, (msg) ->
     loc = msg.match[2]
-    getTimezone(loc).then (res) -> msg.send(res)
+    getTimezone(loc)
+    .done (res) -> msg.send(res)
