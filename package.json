@@ -1,28 +1,28 @@
 {
   "name": "mowglibot",
   "version": "2.6.0",
-
-  "repository" : {
+  "repository": {
     "type": "git",
     "url": "https://github.com/okfn/mowglibot.git"
   },
-
   "author": "Open Knowledge Foundation",
   "description": "The OKF's friendly IRC bot",
-
-  "licenses": [{
-    "type": "MIT",
-    "url": "https://github.com/github/hubot/raw/master/LICENSE"
-  }],
-
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/github/hubot/raw/master/LICENSE"
+    }
+  ],
   "dependencies": {
-    "hubot":         "~2.6.0",
+    "hubot": "~2.6.0",
     "hubot-scripts": "~2.5.0",
-    "hubot-irc":     "~0.1.19"
+    "hubot-irc": "~0.1.19",
+    "timezoner": "~0.1.6",
+    "q": "~0.9.7",
+    "geocoder": "~0.1.0"
   },
-
   "engines": {
     "node": ">= 0.8.x",
-    "npm":  ">= 1.1.x"
+    "npm": ">= 1.1.x"
   }
 }
