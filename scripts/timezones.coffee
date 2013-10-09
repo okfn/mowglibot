@@ -1,4 +1,4 @@
-Q = require 'Q'
+Q = require 'q'
 geocoder = require 'geocoder'
 timezoner = require 'timezoner'
 
