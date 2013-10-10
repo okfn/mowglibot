@@ -30,12 +30,20 @@ fetchLocation = (name) ->
   dfd = Q.defer()
   if name of DEFAULT_TIMEZONES
     [lat, lng] = DEFAULT_TIMEZONES[name]
-    dfd.resolve(lat: lat, lng: lng)
+    dfd.resolve({
+      lat: lat
+      lng: lng
+      address: "Hardcoded as #{lat}, #{lng}"
+    })
   else
     geocode = Q.ninvoke(geocoder, 'geocode', name)
                .then (data) ->
                   if data.status? and data.status == 'OK'
-                    return data.results[0].geometry.location
+                    return {
+                      lat: data.results[0].geometry.location.lat
+                      lng: data.results[0].geometry.location.lng
+                      address: data.results[0].formatted_address
+                    }
                   else
                     throw new Error('Geocoding failed: ' + JSON.stringify(data))
     dfd.resolve(geocode)
@@ -45,23 +53,29 @@ fetchLocation = (name) ->
 fetchTimezone = (loc) ->
   Q.ninvoke(timezoner, 'getTimeZone', loc.lat, loc.lng)
 
-
 # Get times for a timezone by location name
-getTimezone = (name) ->
-  processResults = (tzData) ->
+getTimezone = (name, verbose=false) ->
+  processResults = (locData, tzData) ->
+    res = name + ': '
     if tzData.status? and tzData.status == 'OK'
-      return name + ': ' + getOffsetTime(tzData.dstOffset + tzData.rawOffset)
+      res += getOffsetTime(tzData.dstOffset + tzData.rawOffset)
+      if verbose and locData.address
+        res += ' (' + locData.address + ')'
     else
-      optionalErrorMsg = ''
+      res += tzData.status
       if tzData.error_message?
-        optionalErrorMsg = ' (' + tzData.error_message + ')'
-      return name + ': ' + tzData.status + optionalErrorMsg
+        res += ' (' + tzData.error_message + ')'
+    return res
 
   processError = (err) -> name + ': ' + err
 
   return fetchLocation(name)
-  .then(fetchTimezone)
-  .then(processResults, processError)
+  .then (loc) ->
+    fetchTimezone(loc)
+    .then(
+      ((tz) -> processResults(loc, tz)),
+      processError
+    )
 
 
 # Get times for all the default timezones
@@ -78,4 +92,9 @@ module.exports = (robot) ->
   robot.hear /^!(tz|time|timezone)\s+(.+)$/i, (msg) ->
     loc = msg.match[2]
     getTimezone(loc)
+    .done (res) -> msg.send(res)
+
+  robot.hear /^!(vtz|vtime|vtimezone)\s+(.+)$/i, (msg) ->
+    loc = msg.match[2]
+    getTimezone(loc, verbose=true)
     .done (res) -> msg.send(res)
