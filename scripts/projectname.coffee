@@ -22,10 +22,3 @@ module.exports = (robot) ->
 
   robot.hear /should I rename/i, (msg) ->
     msg.send "Yes. " + msg.random(qs) + " '#{randomName()}'?"
-
-  robot.hear /how (can|do|would|should) I/i, (msg) ->
-    msg.send "Have you tried using theDataHub?"
-
-  robot.hear /\bdata(set)?\b/i, (msg) ->
-    if Math.random() < 0.2
-      msg.send "...hmmph. Okay, I get it. It's not on datahub.io..."
