@@ -19,7 +19,8 @@
     "hubot-irc": "~0.1.19",
     "timezoner": "~0.1.6",
     "q": "~0.9.7",
-    "geocoder": "~0.1.0"
+    "geocoder": "~0.1.0",
+    "request": "~2.27.0"
   },
   "engines": {
     "node": ">= 0.8.x",
