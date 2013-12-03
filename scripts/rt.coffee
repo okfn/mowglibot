@@ -6,7 +6,7 @@
 
 request = require('request')
 
-RT = "http://rt.okfn.org"
+RT = "https://rt.okfn.org"
 
 parseBody = (body) ->
   out = {}
