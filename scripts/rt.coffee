@@ -61,11 +61,11 @@ parseMandrillEvent = (event) ->
     err("no headers field")
     return
 
-  if not msg.headers['X-Rt-Originator']?
-    err("X-Rt-Originator header missing")
-    return
-  # e.g. "X-Rt-Originator: joe@bloggs.com"
-  ret.from = msg.headers['X-Rt-Originator']
+  if msg.headers['X-Rt-Originator']?
+    # e.g. "X-Rt-Originator: joe@bloggs.com"
+    ret.from = msg.headers['X-Rt-Originator']
+  else
+    ret.from = "none"
 
   if not msg.headers['X-Rt-Ticket']?
     err("X-Rt-Ticket header missing")
