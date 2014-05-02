@@ -14,13 +14,14 @@
     }
   ],
   "dependencies": {
-    "hubot": "~2.6.0",
-    "hubot-scripts": "~2.5.0",
-    "hubot-irc": "~0.1.19",
-    "timezoner": "~0.1.6",
-    "q": "~0.9.7",
     "geocoder": "~0.1.0",
-    "request": "~2.27.0"
+    "hubot": "~2.6.0",
+    "hubot-irc": "~0.1.19",
+    "hubot-scripts": "~2.5.0",
+    "parse-duration": "~0.1.0",
+    "q": "~0.9.7",
+    "request": "~2.27.0",
+    "timezoner": "~0.1.6"
   },
   "engines": {
     "node": "0.10.x",
