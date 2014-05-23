@@ -18,6 +18,7 @@
     "hubot": "~2.6.0",
     "hubot-irc": "~0.1.19",
     "hubot-scripts": "~2.5.0",
+    "hubot-slack": "^2.1.0",
     "parse-duration": "~0.1.0",
     "q": "~0.9.7",
     "request": "~2.27.0",
