@@ -1,4 +1,4 @@
-# Description: 
+# Description:
 #   Generates help commands for Hubot.
 #
 # Commands:
@@ -14,8 +14,10 @@
 helpContents = (name, commands) ->
 
   """
+<!DOCTYPE html>
 <html>
   <head>
+  <meta charset="utf-8">
   <title>#{name} Help</title>
   <style type="text/css">
     body {
@@ -62,9 +64,9 @@ module.exports = (robot) ->
         msg.send "No available commands match #{filter}"
         return
 
-    prefix = robot.alias or "#{robot.name} "
+    prefix = robot.alias or robot.name
     cmds = cmds.map (cmd) ->
-      cmd = cmd.replace /^hubot /, prefix
+      cmd = cmd.replace /^hubot/, prefix
       cmd.replace /hubot/ig, robot.name
 
     emit = cmds.join "\n"
