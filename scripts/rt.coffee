@@ -7,7 +7,7 @@
 request = require('request')
 
 RT = process.env["RT_URL"] || "https://rt.okfn.org"
-RT_EMAIL_ROOM = process.env["RT_EMAIL_ROOM"] || "#tech-team"
+RT_EMAIL_ROOM = process.env["RT_EMAIL_ROOM"] || "#tech"
 
 parseBody = (body) ->
   out = {}
