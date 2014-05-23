@@ -1,3 +1,6 @@
+# Description:
+#   Say good morning to people.
+
 lastGreeting = null
 
 morning = [ "Good morning all!", "Well good morning to you!", "*Yawn*... Morning...", "Morgen" ]

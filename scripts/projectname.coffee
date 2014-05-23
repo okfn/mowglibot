@@ -1,3 +1,6 @@
+# Description:
+#   Suggest new project names...
+
 words = [
   [ "Open", "Free", "Libre", "Universal", "Future" ]
   [ "Content", "Knowledge", "Web", "P2P", "Freedom", "Liberty", "Learning", "Resource", "Salad", "Wiki", "Art", "Squirrel", "Everything", "Hardware", "Media", "Music", "Science", "Standard", "Okapi", "Axolotl" ]

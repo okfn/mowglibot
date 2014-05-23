@@ -1,3 +1,11 @@
+# Description:
+#   Help timezones.
+#
+# Commands:
+#   !tz/!time(s)/!timezones - Print time in a set of default timezones
+#   !tz/!time/!timezone <loc> - Print time in the specified location (free text, geocoded)
+#   !vtz/!vtz/!vtimezone <loc> - Same as above but prints more information
+
 Q = require 'q'
 geocoder = require 'geocoder'
 timezoner = require 'timezoner'
