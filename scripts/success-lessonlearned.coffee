@@ -8,10 +8,11 @@
 
 module.exports = (robot) ->
     robot.hear /.*#((success)|(lessonlearned)|(nowreading)).*/i, (msg) ->
+        user = msg.message.user.name
         data =
             type: msg.match[1],
             text: msg.message.text,
-            username: msg.message.user.name,
+            username: user,
         uri = "http://hashtag-listener.herokuapp.com/api"
         apikey = process.env.HUBOT_HASHTAG_LISTENER_KEY
         robot.http(uri)
