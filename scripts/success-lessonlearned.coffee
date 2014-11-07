@@ -17,6 +17,7 @@ module.exports = (robot) ->
         robot.http(uri)
              .header('Authorization', apikey)
              .get(JSON.stringify(data)) (err, res, body) ->
+                robot.logger body
                 parsed = JSON.parse(body)
                 if parsed.success
                     msg.send "Story recorded, #{user}!"
