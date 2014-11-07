@@ -13,7 +13,9 @@ module.exports = (robot) ->
             text = msg.message.text
             username = msg.message.user.name
         uri = "http://hashtag-listener.heroku.com/api"
+        apikey = process.env.HUBOT_HASHTAG_LISTENER_KEY
         robot.http(uri)
+             .header('Authorization', apikey)
              .get(JSON.stringify(data)) (err, res, body) ->
                 parsed = JSON.parse(body)
                 if parsed.success
