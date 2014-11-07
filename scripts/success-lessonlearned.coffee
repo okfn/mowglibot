@@ -16,7 +16,7 @@ module.exports = (robot) ->
         apikey = process.env.HUBOT_HASHTAG_LISTENER_KEY
         robot.http(uri)
              .header('Authorization', apikey)
-             .get(JSON.stringify(data)) (err, res, body) ->
+             .post(JSON.stringify(data)) (err, res, body) ->
                 robot.logger.debug body
                 parsed = JSON.parse(body)
                 if parsed.success
