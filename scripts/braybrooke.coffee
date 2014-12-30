@@ -27,7 +27,7 @@ module.exports = (robot) ->
   robot.hear /#rad/i, (msg) ->
     msg.send '#w00t'
 
-  robot.hear /FTW/i, (msg) ->
+  robot.hear / FTW/i, (msg) ->
     msg.send "FTW...? #{randomName()}?"
 
 
