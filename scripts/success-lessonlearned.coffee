@@ -7,7 +7,7 @@
 
 
 module.exports = (robot) ->
-    robot.hear /.*#((success)|(lessonlearned)|(nowreading)|(nowlistening)).*/i, (msg) ->
+    robot.hear /.*#((success)|(lessonlearned)|(nowreading)|(nowlistening)|(presales)).*/i, (msg) ->
         user = msg.message.user.name
         data =
             type: msg.match[1],
